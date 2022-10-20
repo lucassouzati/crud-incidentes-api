@@ -27,8 +27,8 @@ class StoreIncidentRequest extends FormRequest
         return [
             'title' => 'required|string',
             'description' => 'required|string',
-            'criticality' => ['required', Rule::in(['Alta', 'Média', 'Baixa'])],
-            'type' => ['required', Rule::in(['Alarme','Incidente','Outros'])],
+            'criticality' => 'required|in:Alta,Média,Baixa',
+            'type' => 'required|in:Alarme,Incidente,Outros',
             'status' => 'required|boolean',
         ];
     }
