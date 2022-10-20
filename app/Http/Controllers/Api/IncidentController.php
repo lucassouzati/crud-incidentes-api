@@ -17,7 +17,7 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        //
+        return IncidentResource::collection(Incident::all());
     }
 
     /**
