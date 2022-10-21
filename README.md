@@ -1,5 +1,5 @@
 <h1 align="center">
-    Cadastro de Incidents API (Backend)
+    Cadastro de Incidentes API (Back-end)
 </h1>
 
 ## 🛥️ Sobre o projeto
