@@ -14,6 +14,14 @@ class IncidentResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'criticality' => $this->criticality,
+            'type' => $this->type,
+            'status' => $this->status,
+            'active' => $this->active,
+        ];
     }
 }

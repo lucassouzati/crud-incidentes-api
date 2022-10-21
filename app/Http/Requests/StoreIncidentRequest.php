@@ -29,7 +29,7 @@ class StoreIncidentRequest extends FormRequest
             'description' => 'required|string',
             'criticality' => 'required|in:Alta,Média,Baixa',
             'type' => 'required|in:Alarme,Incidente,Outros',
-            'status' => 'required|boolean',
+            'status' => 'required',
         ];
     }
 }
