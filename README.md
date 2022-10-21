@@ -51,10 +51,21 @@ Agora só rodar as migrations e comandos pelo Sail
 ```
 sail artisan migrate
 ```
+Para rodar os testes automatizados:
 ```
 sail artisan test
 ```
+## 📖 Documentação da API
 
+Em meus projetos backend, costumo utilizar o Laravel Request Docs que documenta automaticamente os endpoints da API, baseados em design patterns do Laravel. Voê pode acessar pela caminho:
+```
+http://localhost/request-docs
+```
+Nessa mesma página você pode realizar chamaadas aos endpoins, e verificar os parâmetros e suas validações.
+<h4 align="center">
+    <img title="Tela do Laravel Request Docs" src=".github/readme/request-docs.png" width="1024px" />
+    <img title="Exemplo de teste com endpoint de post incidents" src=".github/readme/request-docs-result.png" width="1024px" />
+</h4>
 ## 🤔 Como contribuir para o projeto
 
 - Faça um **fork** do projeto;
