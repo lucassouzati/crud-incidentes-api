@@ -28,7 +28,7 @@ docker-compose up -d nginx mysql
 ```
 Caso seja a primeira vez executando essas imagens, esse processo pode demorar alguns minutos. Quando concluir, execute o seguinte comando para entrar dentro do container da aplicação:
 ```
-docker-compose exec --user=laradock workspace bash
+docker-compose exec workspace bash
 ```
 Dentro do container, execute a instalação das dependências:
 ```
