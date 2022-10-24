@@ -28,7 +28,7 @@ docker-compose up -d nginx mysql
 ```
 Caso seja a primeira vez executando essas imagens, esse processo pode demorar alguns minutos. Quando concluir, execute o seguinte comando para entrar dentro do container da aplicação:
 ```
-docker-compose exec workspace bash
+docker-compose exec --user=laradock workspace bash
 ```
 Dentro do container, execute a instalação das dependências:
 ```
@@ -38,9 +38,9 @@ Em seguida copie o .env do projeto:
 ```
 cp .env.example .env
 ```
-Agora só rodar as migrations:
+Agora só rodar as migrations e comandos artisan:
 ```
-php artisan migrate
+php artisan migrate && php artisan key:generate
 ```
 Para rodar os testes automatizados:
 ```
