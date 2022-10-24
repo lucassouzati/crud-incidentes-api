@@ -15,45 +15,36 @@ Esse sistema é uma demonstração simples de uma API backend para servir a um C
 ## 🚀 Como rodar esse projeto
 Primeiramente, clone este projeto aonde você costuma desenvolver seus projetos:
 ```
-git clone git@github.com:lucassouzati/crud-incidentes-api.git
+git clone --recurse-submodules git@github.com:lucassouzati/crud-incidentes-api.git
 ```
-Caso esteja no Windows e não tenha ambiente de desenvolvimento, recomendo que utilize WSL (Windows Subsystem for Linux) junto com Ubuntu, Docker e Laravel Sail. 
-Em seguida, vá para pasta e execute:
+Caso esteja no Windows e não tenha ambiente de desenvolvimento, recomendo que utilize WSL (Windows Subsystem for Linux) junto com Ubuntu e Docker. Para esse projeto, foi utilizado o submódulo Laradock, já com as minhas configurações para rodar o projeto sem precisar alterar nenhum arquivo.
+Vá para a pasta do Laradock dentro da pasta do projeto:
+```
+cd crud-incidentes-api/laradock/
+```
+Agora execute o comando docker:
+```
+docker-compose up -d nginx mysql
+```
+Caso seja a primeira vez executando essas imagens, esse processo pode demorar alguns minutos. Quando concluir, execute o seguinte comando para entrar dentro do container da aplicação:
+```
+docker-compose exec workspace bash
+```
+Dentro do container, execute a instalação das dependências:
 ```
 composer install
 ```
-Caso veja algum erro nesse comando, execute o seguinte comando para instalar as dependências do Sail:
-```
-docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v $(pwd):/var/www/html \
-    -w /var/www/html \
-    laravelsail/php81-composer:latest \
-    composer install --ignore-platform-reqs
-```
-Em seguida, crie o .env do projeto
+Em seguida copie o .env do projeto:
 ```
 cp .env.example .env
 ```
-E agora para instalar o Sail com MySQL, execute o comando:
+Agora só rodar as migrations:
 ```
-php artisan sail:install --with=mysql
-```
-E agora para rodar o Sail do Laravel, execute o comando
-```
-./vendor/bin/sail up -d
-```
-Configure um alias no seu .bashrc ou equivalente para não precisar especificar o diretório do sail em todos comandos
-```
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-```
-Agora só rodar as migrations e comandos pelo Sail
-```
-sail artisan migrate
+php artisan migrate
 ```
 Para rodar os testes automatizados:
 ```
-sail artisan test
+php artisan test
 ```
 ## 📖 Documentação da API
 
