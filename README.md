@@ -34,7 +34,7 @@ Dentro do container, execute a instalação das dependências:
 ```
 composer install
 ```
-Em seguida copie o .env do projeto:
+Em seguida, copie o .env do projeto:
 ```
 cp .env.example .env
 ```
